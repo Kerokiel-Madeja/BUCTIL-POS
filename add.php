@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
+        /* HELLO */
         header("location: index.php?msg");
     }
 }
