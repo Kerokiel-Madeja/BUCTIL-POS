@@ -101,8 +101,8 @@ $(document).ready(function () {
   $("#close-btn2").click(function () {
     $("#PcsModal").hide();
   });
-});
- */
+}); */
+
 $(function () {
   $(".add-to-cart").on("click", function () {
     $.post("get_item_details.php", { itemId: $(this).attr("add-id") })
