@@ -81,7 +81,7 @@ $(document).ready(function () {
   });
 });
 
-/* $(document).ready(function () {
+  $(document).ready(function () {
   $(document).on("click", ".add-to-cart", function () {
     $("#PcsModal").show();
   });
@@ -102,7 +102,7 @@ $(document).ready(function () {
     $("#PcsModal").hide();
   });
 });
- */
+
 $(function () {
   $(".add-to-cart").on("click", function () {
     $.post("get_item_details.php", { itemId: $(this).attr("add-id") })
