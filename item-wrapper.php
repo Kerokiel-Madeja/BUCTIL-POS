@@ -100,7 +100,7 @@
                 text-align: center;
                 border-radius: 5px;
                 padding: 10px;
-                background-color: #c7c8cc;
+                background-color: white;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
 
@@ -133,6 +133,8 @@
             .cards img {
                 height: 30vh;
                 width: 25vw;
+                mix-blend-mode: multiply;
+
             }
 
             .price {

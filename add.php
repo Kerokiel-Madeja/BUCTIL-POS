@@ -15,18 +15,6 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        $res = [
-            'status' => 200,
-            'message' => 'Student Created Successfully'
-        ];
-        echo json_encode($res);
-        return;
-    } else {
-        $res = [
-            'status' => 500,
-            'message' => 'Student Not Created'
-        ];
-        echo json_encode($res);
-        return;
+        header("location: index.php?msg");
     }
 }
