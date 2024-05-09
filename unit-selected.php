@@ -1,6 +1,5 @@
 <style>
-    .PcsModal,
-    .PcsModal1 {
+    .modal {
         display: none;
         position: fixed;
         top: 0;
@@ -72,16 +71,31 @@
     }
 </style>
 
-<div class="PcsModal" id="PcsModal">
+<div class="modal" id="PcsModal">
     <div class="popup2" id="popup2">
-        <span class="close" id="close-btn2">&times;</span>
+        <span class="close">&times;</span>
         <h2>Add to Order</h2>
         <div class="selected">
             <div class="s-content">
-                <p id="productName"></p>
-                <p id="productPrice"></p>
+                <p class="productName"></p>
+                <p class="productPrice"></p>
             </div>
             <input type="number" name="quantity" id="quantity" placeholder="Enter quantity">
+            <button type="submit" id="add-to-cart">Submit</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="KiloModal">
+    <div class="popup2" id="popup2">
+        <span class="close">&times;</span>
+        <h2>Add to Order</h2>
+        <div class="selected">
+            <div class="s-content">
+                <p class="productName"></p>
+                <p class="productPrice"></p>
+            </div>
+            <h2>2.1212 Kilo</h2>
             <button type="submit" id="add-to-cart">Submit</button>
         </div>
     </div>
