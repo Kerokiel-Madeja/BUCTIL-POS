@@ -81,42 +81,62 @@ $(document).ready(function () {
   });
 });
 
-/* $(document).ready(function () {
-  $(document).on("click", ".add-to-cart", function () {
-    $("#PcsModal").show();
-  });
-
-  $("#search").on("keyup", function () {
-    var searchText = $(this).val();
-    $.ajax({
-      url: "search.php",
-      method: "GET",
-      data: { search: searchText },
-      success: function (response) {
-        $(".card-wrapper").html(response);
-      },
-    });
-  });
-
-  $("#close-btn2").click(function () {
-    $("#PcsModal").hide();
-  });
-}); */
-
 $(function () {
-  $(".add-to-cart").on("click", function () {
-    $.post("get_item_details.php", { itemId: $(this).attr("add-id") })
-      .done(function (response) {
-        var item = JSON.parse(response);
-        $("#productName").text(item.product_name);
-        $("#productPrice").text(`₱${item.product_price}`);
-        $("#PcsModal").show();
+  // Cache selectors
+  var addToCartBtn = $(".add-to-cart");
+  var productName = $(".productName");
+  var productPrice = $(".productPrice");
+  var kiloModal = $("#KiloModal");
+  var pcsModal = $("#PcsModal");
+  var closeModalBtn = $(".close");
+  var searchInput = $("#search");
+
+  // Combine event handlers
+  addToCartBtn.on("click", function () {
+    var itemId = $(this).attr("add-id");
+
+    $.post({
+      url: "get_item_details.php",
+      data: { itemId: itemId },
+      dataType: "json", // Specify response type
+    })
+      .done(function (item) {
+        productName.text(item.product_name);
+        productPrice.text(`₱${item.product_price}/${item.product_type}`);
+
+        // Show modal based on product type
+        item.product_type === "kilo" ? kiloModal.show() : pcsModal.show();
       })
       .fail(function (xhr) {
         console.error(`Error fetching product details: ${xhr.statusText}`);
       });
   });
-  $("#close-btn2").on("click", function () {
-    $("#PcsModal").hide();
+
+  // Close modal when close button is clicked
+  closeModalBtn.on("click", function () {
+    $(".modal").hide();
+  });
+
+  // Add event listener to search input field
+  searchInput.on("input", function () {
+    var searchQuery = $(this).val().toLowerCase(); // Get the search query and convert it to lowercase
+
+    // Get all cards in the card-wrapper
+    var cards = $(".card-wrapper .cards");
+
+    // Iterate through each card
+    cards.each(function () {
+      // Get the product name of the current card
+      var productName = $(this).find("h2").text().toLowerCase();
+
+      // Check if the product name starts with the search query
+      if (productName.startsWith(searchQuery)) {
+        // If it does, display the card
+        $(this).css("display", "block");
+      } else {
+        // If it doesn't, hide the card
+        $(this).css("display", "none");
+      }
+    });
   });
 });
