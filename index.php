@@ -12,7 +12,7 @@
 
 <body>
     <nav>
-        <h1>P O S</h1>
+        <h1>P O 1</h1>
         <div class="Toggle-wrapper">
             <h1>Admin</h1>
             <label class="toggle">

@@ -100,7 +100,7 @@
                 text-align: center;
                 border-radius: 5px;
                 padding: 10px;
-                background-color: white;
+                background-color: #c7c8cc;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
 
@@ -133,8 +133,6 @@
             .cards img {
                 height: 30vh;
                 width: 25vw;
-                mix-blend-mode: multiply;
-
             }
 
             .price {
@@ -156,7 +154,7 @@
                     <li><a href="#" onclick="toggleUnderline(event)">Vegetables</a></li>
                     <li><a href="#" onclick="toggleUnderline(event)">Fruits</a></li>
                 </ul>
-                <form action="" method="" class="search-form">
+                <form class="search-form">
                     <div class="search-container">
                         <input type="text" id="search" name="search" placeholder="Search...">
                         <button type="submit"><img src="images/search.png" alt="Search"></button>
