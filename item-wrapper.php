@@ -156,7 +156,7 @@
                     <li><a href="#" onclick="toggleUnderline(event)">Vegetables</a></li>
                     <li><a href="#" onclick="toggleUnderline(event)">Fruits</a></li>
                 </ul>
-                <form action="search.php" method="GET" class="search-form">
+                <form action="" method="" class="search-form">
                     <div class="search-container">
                         <input type="text" id="search" name="search" placeholder="Search...">
                         <button type="submit"><img src="images/search.png" alt="Search"></button>
