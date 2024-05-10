@@ -95,7 +95,15 @@
                 <p class="productName"></p>
                 <p class="productPrice"></p>
             </div>
-            <h2>2.1212 Kilo</h2>
+
+            <?php
+                $pythonFile = "main.py";
+                $result = shell_exec("python " . $pythonFile);
+                echo $result, " kg";
+            ?>
+
+            <br>
+
             <button type="submit" id="add-to-cart">Submit</button>
         </div>
     </div>

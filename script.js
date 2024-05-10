@@ -102,7 +102,7 @@ $(function () {
     })
       .done(function (item) {
         productName.text(item.product_name);
-        productPrice.text(`₱${istem.product_price}/${item.product_type}`);
+        productPrice.text(`₱${item.product_price}/${item.product_type}`);
 
         // Show modal based on product type
         item.product_type === "kilo" ? kiloModal.show() : pcsModal.show();

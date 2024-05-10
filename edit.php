@@ -20,7 +20,7 @@ if (isset($_POST['submit1'])) {
         move_uploaded_file($tmpname, "images/" . $newfilename);
 
         // Update the product information with the new image
-        $query = "UPDATE `products` SET `product_image`='$newfilename',`product_name`='$productName', `product_price`='$productPrice', `product_type`='$productType', `product_unit`='$productUnit WHERE id = $itemId";
+        $query = "UPDATE `products` SET `product_image`='$newfilename',`product_name`='$productName', `product_price`='$productPrice', `product_type`='$productType', `product_unit`='$productUnit' WHERE id = $itemId";
     } else {
         // Update the product information without changing the image
         $query = "UPDATE `products` SET `product_name`='$productName', `product_price`='$productPrice', `product_type`='$productType', `product_unit`='$productUnit' WHERE id = $itemId";
