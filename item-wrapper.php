@@ -135,16 +135,21 @@
                 width: 25vw;
             }
 
-            .price {
-                position: absolute;
-                top: 0;
-                right: 0;
-                color: white;
-                border-radius: 3px;
-                padding: 2px 2px;
-                background-color: #643a6b;
-                font-size: 16px;
+            .card-info{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 2vw;
+                
             }
+
+            .card-info > p{
+                background-color: #643a6b;
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+            }
+
+
         </style>
 
         <div class="item-wrapper">
@@ -170,8 +175,10 @@
                 ?>
                     <div class="cards">
                         <img src="images/<?php echo $row['product_image']; ?>" alt="Product image" class="product-image">
-                        <h2><?php echo $row["product_name"] ?></h2>
-                        <p class="price">₱<?php echo $row["product_price"] ?>/<?php echo $row["product_type"] ?></p>
+                        <div class="card-info"><p class="name">
+                            <?php echo $row["product_name"] ?></p>
+                            <p class="price">₱<?php echo $row["product_price"] ?>/<?php echo $row["product_type"] ?></p>
+                        </div>   
                         <input type="submit" value="ADD TO CART" name="add_to_cart" class="add-to-cart" id="add-to-cart" add-id="<?php echo $row['id']; ?>">
                     </div>
                 <?php
