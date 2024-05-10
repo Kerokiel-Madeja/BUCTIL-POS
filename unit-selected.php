@@ -98,7 +98,7 @@
 
             <?php
                 $pythonFile = "main.py";
-                $result = shell_exec("python " . $pythonFile);
+                $result = shell_exec("sudo python " . $pythonFile);
                 echo $result, " kg";
             ?>
 
